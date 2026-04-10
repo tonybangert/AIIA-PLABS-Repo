@@ -560,7 +560,9 @@ async def production_monitor_loop():
 # FastAPI App
 # ─────────────────────────────────────────────────────────────
 
-app = FastAPI(title="AIIA Command Center", version="2.1.0")
+from local_brain.__version__ import __version__
+
+app = FastAPI(title="AIIA Command Center", version=__version__)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
